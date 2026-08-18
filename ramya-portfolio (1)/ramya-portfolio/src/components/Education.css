@@ -1,0 +1,43 @@
+.edu__list {
+  border-top: 1px solid var(--border-soft);
+}
+
+.edu__item {
+  display: grid;
+  grid-template-columns: 140px 1fr 100px;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.edu__period {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.edu__degree {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.edu__school {
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+
+.edu__detail {
+  color: var(--signal);
+  font-size: 13px;
+  text-align: right;
+}
+
+@media (max-width: 680px) {
+  .edu__item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .edu__detail {
+    text-align: left;
+  }
+}

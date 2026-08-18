@@ -1,0 +1,154 @@
+:root {
+  /* Color tokens — NOC (network operations center) dashboard palette */
+  --bg: #0a0e12;
+  --bg-elevated: #0d1218;
+  --panel: #10151b;
+  --panel-hover: #131a21;
+  --border: #1f2a33;
+  --border-soft: #182129;
+  --text-primary: #e8edf1;
+  --text-secondary: #b3c0ca;
+  --text-muted: #6f8290;
+  --signal: #3ddc97;      /* success / online */
+  --signal-dim: #234a3b;
+  --warn: #f2b84b;        /* highlight / active */
+  --link: #5ab0ff;        /* data / interactive */
+  --danger: #ef6a6a;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --container: 1080px;
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    linear-gradient(var(--border-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* Panel id tag — mimics a dashboard panel reference number */
+.panel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.panel-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 8px var(--signal);
+}
+
+section {
+  position: relative;
+  padding: 96px 0;
+  border-top: 1px solid var(--border-soft);
+}
+
+section:first-of-type {
+  border-top: none;
+}
+
+.section-heading {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 48px;
+  max-width: 560px;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 64px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+}

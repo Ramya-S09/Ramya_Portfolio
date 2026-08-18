@@ -1,0 +1,56 @@
+.exp__list {
+  border-top: 1px solid var(--border-soft);
+}
+
+.exp__item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.exp__period {
+  color: var(--signal);
+  font-size: 13px;
+}
+
+.exp__role {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.exp__company {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.exp__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp__points li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.exp__points li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--warn);
+}
+
+@media (max-width: 680px) {
+  .exp__item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
